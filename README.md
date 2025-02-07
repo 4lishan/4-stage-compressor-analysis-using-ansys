@@ -61,16 +61,15 @@ The compressor model includes **4 axial stages**, each modeled with sector count
 ## Static Analysis Results
 
 ### Stress Distribution
-![Stress Distribution]([/Stress%20von%20Mises.png))
+![Stress Distribution](Stress%20von%20Mises.png)
 
 - **Maximum Stress**: 2452.8 MPa, observed at critical regions near blade roots and interstage boundaries.
 - Stress values are cyclically periodic due to applied symmetric constraints, matching the expected physical behavior of the system.
 - Concentrations are typical in regions under combined loading of rotational forces, thermal gradients, and pressure.
 
 ### Total Deformation
-![Total Deformation](./results/static_analysis_deformation.png)
-
-- **Maximum Deformation**: 1.86 mm, predominantly observed at the leading blade tips of stage 1.
+![Total Deformation](Total%20deformation.png)
+- **Maximum Deformation**: 1.86 mm, predominantly observed at the leading blade tips of stage 3.
 - Deformation decreases towards the fixed boundary (stage 4 rim), with minimal displacement at the hub regions.
 - These results confirm structural stability with acceptable deformation limits under the prescribed loading conditions.
 
@@ -80,24 +79,41 @@ The compressor model includes **4 axial stages**, each modeled with sector count
 
 ### Natural Frequencies and Mode Shapes
 #### Harmonic Index = 0
-![Mode Shapes - HI 0](./results/modal_analysis_hi_0.png)
-
-- **Mode 1 Frequency**: 1004.7 Hz.
-- **Mode 6 Frequency**: 1989.9 Hz.
+![Mode Shapes - HI 0](Mode%20Shapes%20HI0.png)
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 1004.7           |
+| 2     | 1197.5           |
+| 3     | 1591.1       |
+| 4     | 1695     |
+| 5     | 1891.4        |
+| 6     | 1989.9       |
 - Deformation patterns primarily involve axial and bending modes, indicative of blade flexibility across all 4 stages.
 
 #### Harmonic Index = 1
-![Mode Shapes - HI 1](./results/modal_analysis_hi_1.png)
+![Mode Shapes - HI 1](Mode%20Shapes%20HI1.png)
 
-- **Mode 1 Frequency**: 1060.2 Hz.
-- **Mode 6 Frequency**: 1349.4 Hz.
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 1060.2           |
+| 2     | 1060.2           |
+| 3     | 1246.9       |
+| 4     | 1246.9   |
+| 5     | 1349.4        |
+| 6     | 1349.4       |
 - Higher harmonic indices reveal mixed axial-bending motion with more complex deformation patterns in the blade and hub geometry.
 
 #### Harmonic Index = 2
-![Mode Shapes - HI 2](./results/modal_analysis_hi_2.png)
+![Mode Shapes - HI 2](Mode%20Shapes%20HI2.png)
 
-- **Mode 1 Frequency**: 829.63 Hz.
-- **Mode 6 Frequency**: 1570.4 Hz.
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 829.63           |
+| 2     | 829.63           |
+| 3     | 1450.9       |
+| 4     | 1450.9   |
+| 5     | 1570.4        |
+| 6     | 1570.4       |
 - The higher harmonic behavior highlights interstage vibrational coupling and resonance, with deformation increasingly concentrated near blade tips.
 
 ### Observations
@@ -106,23 +122,54 @@ The compressor model includes **4 axial stages**, each modeled with sector count
 
 ---
 
-## Repository Structure
-- `/models`: CAD files and Ansys project setup.
-- `/results`: 
-  - `static_analysis`: Stress and deformation plots.
-  - `modal_analysis`: Frequency tables and harmonic index mode shapes.
-  - `prestressed_modal`: Results will be added soon.
-- `/docs`: Additional technical notes and references.
+## Pre Stressed Modal Analysis Results
+
+### Natural Frequencies and Mode Shapes
+#### Harmonic Index = 0
+![Mode Shapes - HI 0](Mode%20Shapes%20HI0-Pre%20Stress.png)
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 1053.8           |
+| 2     | 1248.2           |
+| 3     | 1619.9       |
+| 4     | 1747.4   |
+| 5     | 1891.4        |
+| 6     | 2027.6       |
+- Deformation patterns primarily involve axial and bending modes, indicative of blade flexibility across all 4 stages.
+
+#### Harmonic Index = 1
+![Mode Shapes - HI 1](Mode%20Shapes%20HI1-Pre%20Stress.png)
+
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 1041           |
+| 2     | 1041          |
+| 3     | 1306.5       |
+| 4     | 1306.5   |
+| 5     | 1407.7        |
+| 6     | 1407.7       |
+- Higher harmonic indices reveal mixed axial-bending motion with more complex deformation patterns in the blade and hub geometry.
+
+#### Harmonic Index = 2
+![Mode Shapes - HI 2](Mode%20Shapes%20HI2-Pre%20Stress.png)
+
+| Mode Shape | Frequency (Hz) |
+|-------|--------------|
+| 1     | 847.86           |
+| 2     | 847.86           |
+| 3     | 1512.6       |
+| 4     | 1512.6   |
+| 5     | 1631.4        |
+| 6     | 1631.4       |
+- The higher harmonic behavior highlights interstage vibrational coupling and resonance, with deformation increasingly concentrated near blade tips.
+
+### Observations
+- The natural frequencies and mode shapes progressively increase with higher harmonic indices, reflecting the expected structural characteristics of multistage systems.
+- The results underscore the importance of evaluating differing harmonic indices to fully capture the vibrational behavior of cyclic symmetric systems.
+
 
 ---
 
-## Next Steps and Updates
-- Incorporate prestressed modal analysis results.
-- Discuss the impact of prestress on natural frequencies (comparison with baseline modal analysis).
-- Validate simulation predictions with experimental data (if available).
-
----
-
-*Last Updated: [Insert Date]*  
-*Author: [Your Name/Team Name]*  
-*Software: Ansys Mechanical 2023*
+*Last Updated: [2025-02-07]*  
+*Author: [Zeeshan Ali Nasir]*  
+*Software: Ansys Mechanical 2022*
