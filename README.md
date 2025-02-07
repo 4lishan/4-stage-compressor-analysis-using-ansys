@@ -54,14 +54,14 @@ The compressor model includes **4 axial stages**, each modeled with sector count
 - **Objective**: Evaluate the influence of prestress conditions (from static analysis) on natural frequencies/mode shapes.
 - **Method**: Apply static analysis results as preload conditions.
 - **Harmonic Indices**: 0, 1, 2.
-- **Outputs (Upcoming)**: Preloaded natural frequencies and mode shapes.
+- **Outputs**: Preloaded natural frequencies and mode shapes.
 
 ---
 
 ## Static Analysis Results
 
 ### Stress Distribution
-![Stress Distribution](./results/static_analysis_stress.png)
+![Stress Distribution]([/Stress%20von%20Mises.png))
 
 - **Maximum Stress**: 2452.8 MPa, observed at critical regions near blade roots and interstage boundaries.
 - Stress values are cyclically periodic due to applied symmetric constraints, matching the expected physical behavior of the system.
